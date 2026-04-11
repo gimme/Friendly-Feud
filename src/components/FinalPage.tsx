@@ -61,7 +61,7 @@ interface FinalPageProps {
 export default function FinalPage({ game, timer }: FinalPageProps) {
   const { t } = useTranslation();
   const total = [...game.final_round, ...game.final_round_2].reduce((sum, round) => sum + round.points, 0);
-  const showFirstRound = !game.is_final_second && !game.hide_first_round;
+  const showFirstRound = !game.hide_first_round;
   const showSecondRound = game.is_final_second;
 
   return (
