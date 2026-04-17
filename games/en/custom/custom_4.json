@@ -1,0 +1,271 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Money/Coins",
+          "pnt": 19
+        },
+        {
+          "ans": "Food/Water",
+          "pnt": 18
+        },
+        {
+          "ans": "First Aid Kit",
+          "pnt": 18
+        },
+        {
+          "ans": "Spare Tire",
+          "pnt": 15
+        },
+        {
+          "ans": "Map",
+          "pnt": 7
+        },
+        {
+          "ans": "Jumper Cables",
+          "pnt": 7
+        },
+        {
+          "ans": "Spare Clothes/Shoes",
+          "pnt": 5
+        },
+        {
+          "ans": "Gas Can",
+          "pnt": 2
+        },
+        {
+          "ans": "Flare",
+          "pnt": 2
+        }
+      ],
+      "multiply": 1,
+      "question": "What's Something You Keep in Your Car, Just in Case?"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Money",
+          "pnt": 37
+        },
+        {
+          "ans": "Health/A New Heart",
+          "pnt": 17
+        },
+        {
+          "ans": "A Brain",
+          "pnt": 7
+        },
+        {
+          "ans": "Hot Bod",
+          "pnt": 5
+        },
+        {
+          "ans": "Peace on Earth",
+          "pnt": 4
+        },
+        {
+          "ans": "Love",
+          "pnt": 4
+        },
+        {
+          "ans": "Happiness",
+          "pnt": 4
+        },
+        {
+          "ans": "Magic Power/To Fly",
+          "pnt": 4
+        }
+      ],
+      "multiply": 1,
+      "question": "If You Could Go to the Land of Oz, What Would You Ask the Wizard For?"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Noises/Voices",
+          "pnt": 50
+        },
+        {
+          "ans": "Moving Objects",
+          "pnt": 18
+        },
+        {
+          "ans": "Flickering Lights",
+          "pnt": 12
+        },
+        {
+          "ans": "Doors Open/Close",
+          "pnt": 7
+        },
+        {
+          "ans": "Ghosts",
+          "pnt": 6
+        },
+        {
+          "ans": "Weird Odors",
+          "pnt": 2
+        }
+      ],
+      "multiply": 2,
+      "question": "Name Something That Might Make You Suspect Your New House Is Haunted"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Change Seats",
+          "pnt": 39
+        },
+        {
+          "ans": "Cover Nose/Mask",
+          "pnt": 24
+        },
+        {
+          "ans": "Turn Head",
+          "pnt": 6
+        },
+        {
+          "ans": "Endure/Enjoy It",
+          "pnt": 6
+        },
+        {
+          "ans": "Spray Perfume",
+          "pnt": 6
+        },
+        {
+          "ans": "Say Something",
+          "pnt": 3
+        },
+        {
+          "ans": "Sleep",
+          "pnt": 3
+        },
+        {
+          "ans": "Hang in the Bathroom",
+          "pnt": 3
+        }
+      ],
+      "multiply": 3,
+      "question": "Name Something You'd Do if the Person Sitting Next to You on an Airplane Had B.O."
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Season It",
+          48
+        ],
+        [
+          "Marinate It",
+          33
+        ],
+        [
+          "Cut It/Trim It",
+          11
+        ],
+        [
+          "Thaw/Defrost It",
+          7
+        ]
+      ],
+      "question": "We Asked 100 Men: Name Something You Do With Your Meat Before You Put It On the Grill"
+    },
+    {
+      "answers": [
+        [
+          "China",
+          43
+        ],
+        [
+          "Japan",
+          24
+        ],
+        [
+          "Thailand",
+          23
+        ],
+        [
+          "India",
+          7
+        ]
+      ],
+      "question": "Name an Asian Country Known for its Cuisine"
+    },
+    {
+      "answers": [
+        [
+          "7",
+          30
+        ],
+        [
+          "8",
+          26
+        ],
+        [
+          "10",
+          17
+        ],
+        [
+          "9",
+          13
+        ],
+        [
+          "5",
+          7
+        ],
+        [
+          "6",
+          4
+        ]
+      ],
+      "question": "On a Scale of 1 to 10, How Bad Does Your Headache Have to Be Before You Call in Sick to Work?"
+    },
+    {
+      "answers": [
+        [
+          "Dress",
+          44
+        ],
+        [
+          "Ring",
+          31
+        ],
+        [
+          "Champagne/Drinks",
+          11
+        ],
+        [
+          "Dinner",
+          6
+        ]
+      ],
+      "question": "Name Something You Would Buy After Getting Engaged"
+    },
+    {
+      "answers": [
+        [
+          "Bear",
+          33
+        ],
+        [
+          "Baby/Child",
+          25
+        ],
+        [
+          "Dog",
+          21
+        ],
+        [
+          "Giant",
+          8
+        ]
+      ],
+      "question": "Never Wake a Sleeping ___"
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}

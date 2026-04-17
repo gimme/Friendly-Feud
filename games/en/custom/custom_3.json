@@ -1,0 +1,255 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Swiss Cheese",
+          "pnt": 40
+        },
+        {
+          "ans": "Clothes/Socks",
+          "pnt": 16
+        },
+        {
+          "ans": "Alibi/Story",
+          "pnt": 14
+        },
+        {
+          "ans": "Net/Fishing Net",
+          "pnt": 9
+        },
+        {
+          "ans": "Colander/Strainer",
+          "pnt": 8
+        },
+        {
+          "ans": "Golf Course",
+          "pnt": 2
+        },
+        {
+          "ans": "Screen",
+          "pnt": 2
+        },
+        {
+          "ans": "Road/Street",
+          "pnt": 2
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something That Might Be Full of Holes"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Sleep/Dream",
+          "pnt": 75
+        },
+        {
+          "ans": "Sneeze",
+          "pnt": 16
+        },
+        {
+          "ans": "Kiss",
+          "pnt": 3
+        },
+        {
+          "ans": "Swim/Dive",
+          "pnt": 3
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something That's Hard to Do With Your Eyes Open"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Kid's Bedroom",
+          "pnt": 70
+        },
+        {
+          "ans": "Summer Camp",
+          "pnt": 11
+        },
+        {
+          "ans": "Military Barracks",
+          "pnt": 7
+        },
+        {
+          "ans": "Furniture Store",
+          "pnt": 6
+        }
+      ],
+      "multiply": 2,
+      "question": "Name a Specific Place Where You'd See Bunk Beds"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Tacky Restaurant",
+          "pnt": 43
+        },
+        {
+          "ans": "Strip Joint",
+          "pnt": 19
+        },
+        {
+          "ans": "Sporting Event",
+          "pnt": 12
+        },
+        {
+          "ans": "Bar/Club",
+          "pnt": 6
+        },
+        {
+          "ans": "Bowling Alley",
+          "pnt": 4
+        },
+        {
+          "ans": "His Parent's House",
+          "pnt": 4
+        },
+        {
+          "ans": "The Movies",
+          "pnt": 2
+        },
+        {
+          "ans": "Car Show",
+          "pnt": 2
+        }
+      ],
+      "multiply": 3,
+      "question": "Name a Place Where if Her Husband Took Her There for Her Anniversary, a Wife Would Be Mad"
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Kissing",
+          56
+        ],
+        [
+          "Talking",
+          23
+        ],
+        [
+          "Whistling",
+          7
+        ],
+        [
+          "Singing",
+          4
+        ],
+        [
+          "Playing Flute/Horn",
+          4
+        ],
+        [
+          "Licking Your Lips",
+          2
+        ]
+      ],
+      "question": "Name an Activity That Requires Using Your Lips"
+    },
+    {
+      "answers": [
+        [
+          "Chocolate",
+          36
+        ],
+        [
+          "Peanuts",
+          22
+        ],
+        [
+          "Caramel",
+          15
+        ],
+        [
+          "Almonds",
+          12
+        ],
+        [
+          "Nougat",
+          10
+        ],
+        [
+          "Coconut",
+          6
+        ]
+      ],
+      "question": "Name a Common Candy Bar Component"
+    },
+    {
+      "answers": [
+        [
+          "Another Person",
+          42
+        ],
+        [
+          "Ghost/Monster",
+          25
+        ],
+        [
+          "Animals/Rats",
+          21
+        ],
+        [
+          "Flood/Water Heater",
+          10
+        ]
+      ],
+      "question": "When You Hear a Noise Coming From Your Basement, What Do You Pray That It ISN'T?"
+    },
+    {
+      "answers": [
+        [
+          "Poker Chips",
+          62
+        ],
+        [
+          "Cards",
+          22
+        ],
+        [
+          "Money",
+          7
+        ],
+        [
+          "Green Felt",
+          6
+        ]
+      ],
+      "question": "Name Something You'd Find on Top of a Poker Table"
+    },
+    {
+      "answers": [
+        [
+          "Suit/Tux",
+          35
+        ],
+        [
+          "Dress",
+          26
+        ],
+        [
+          "Jewelry",
+          10
+        ],
+        [
+          "Dress Shoes",
+          6
+        ],
+        [
+          "Shotgun",
+          4
+        ]
+      ],
+      "question": "Name Something In A Person's Closet That Only Comes Out on Special Occasions"
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "rounds": [
+    {
+      "answers": [
+        {
+          "ans": "Sun/Beach Weather",
+          "pnt": 62
+        },
+        {
+          "ans": "Fire/Flame Throwers",
+          "pnt": 14
+        },
+        {
+          "ans": "Blow Dryers",
+          "pnt": 3
+        },
+        {
+          "ans": "Rain",
+          "pnt": 3
+        },
+        {
+          "ans": "Snowplow/Shovel",
+          "pnt": 3
+        },
+        {
+          "ans": "Drought",
+          "pnt": 2
+        },
+        {
+          "ans": "Snowballs",
+          "pnt": 2
+        },
+        {
+          "ans": "Peeing Dogs/Pee",
+          "pnt": 2
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something Snowmen Might Have Nightmares About"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Bark",
+          "pnt": 67
+        },
+        {
+          "ans": "Pant/Tongue Out",
+          "pnt": 14
+        },
+        {
+          "ans": "Down On All Fours",
+          "pnt": 11
+        },
+        {
+          "ans": "Hands Up/Beg",
+          "pnt": 3
+        }
+      ],
+      "multiply": 1,
+      "question": "Name One Thing People Do to Imitate a Dog"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Brown",
+          "pnt": 61
+        },
+        {
+          "ans": "Yellow",
+          "pnt": 11
+        },
+        {
+          "ans": "Red",
+          "pnt": 10
+        },
+        {
+          "ans": "Green",
+          "pnt": 10
+        },
+        {
+          "ans": "Black",
+          "pnt": 2
+        },
+        {
+          "ans": "Pink",
+          "pnt": 1
+        }
+      ],
+      "multiply": 2,
+      "question": "When You Enter a Bathroom, What Color Do You Really Hope NOT to See in the Toilet Bowl?"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Library",
+          "pnt": 82
+        },
+        {
+          "ans": "Church",
+          "pnt": 10
+        },
+        {
+          "ans": "Theater/Movies",
+          "pnt": 3
+        },
+        {
+          "ans": "Bedroom",
+          "pnt": 2
+        }
+      ],
+      "multiply": 3,
+      "question": "Name a Place Where You're Supposed to Be Very Quiet"
+    }
+  ],
+  "final_round": [
+    {
+      "answers": [
+        [
+          "Food/Chinese",
+          61
+        ],
+        [
+          "The Trash",
+          31
+        ],
+        [
+          "Money/Loan",
+          4
+        ],
+        [
+          "The Dog/Pet",
+          2
+        ]
+      ],
+      "question": "Name Something People Take Out"
+    },
+    {
+      "answers": [
+        [
+          "Gum",
+          49
+        ],
+        [
+          "Poop/Dog Doo",
+          43
+        ],
+        [
+          "Mud/Dirt",
+          4
+        ],
+        [
+          "TP/Tissue",
+          3
+        ]
+      ],
+      "question": "Name Something You Hate to See on the Bottom of Your Shoe"
+    },
+    {
+      "answers": [
+        [
+          "Sand",
+          50
+        ],
+        [
+          "Cactus",
+          39
+        ],
+        [
+          "Camel",
+          4
+        ],
+        [
+          "Palm Tree",
+          4
+        ]
+      ],
+      "question": "Name Something You'd Put in Your Backyard if You Wanted It to Look Like a Desert"
+    },
+    {
+      "answers": [
+        [
+          "Snow/The Cold",
+          33
+        ],
+        [
+          "Santa",
+          31
+        ],
+        [
+          "Annoying Elves",
+          29
+        ],
+        [
+          "Reindeer",
+          3
+        ]
+      ],
+      "question": "Name Something Mrs. Claus Might Leave the North Pole to Get Away From"
+    },
+    {
+      "answers": [
+        [
+          "Captain America",
+          22
+        ],
+        [
+          "Iron Man",
+          22
+        ],
+        [
+          "Black Panther",
+          20
+        ],
+        [
+          "The Hulk",
+          15
+        ],
+        [
+          "Thor",
+          15
+        ],
+        [
+          "Black Widow",
+          9
+        ],
+        [
+          "Spiderman",
+          3
+        ],
+        [
+          "Hawkeye",
+          3
+        ]
+      ],
+      "question": "Name one of Marvel's Avengers"
+    }
+  ],
+  "final_round_timers": [
+    20,
+    25
+  ]
+}
