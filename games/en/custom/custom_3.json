@@ -3,182 +3,137 @@
     {
       "answers": [
         {
-          "ans": "Swiss Cheese",
-          "pnt": 40
+          "ans": "Suit/Tux",
+          "pnt": 35
         },
         {
-          "ans": "Clothes/Socks",
-          "pnt": 16
+          "ans": "Dress",
+          "pnt": 26
         },
         {
-          "ans": "Alibi/Story",
+          "ans": "Jewelry",
+          "pnt": 10
+        },
+        {
+          "ans": "Dress Shoes",
+          "pnt": 6
+        },
+        {
+          "ans": "Shotgun",
+          "pnt": 4
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something in a Person's Closet That Only Comes Out on Special Occasions"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Hair/Unibrow",
+          "pnt": 48
+        },
+        {
+          "ans": "Lawn/Weeds",
           "pnt": 14
         },
         {
-          "ans": "Net/Fishing Net",
-          "pnt": 9
+          "ans": "Kids/Babies",
+          "pnt": 13
         },
         {
-          "ans": "Colander/Strainer",
-          "pnt": 8
+          "ans": "Belly/Weight",
+          "pnt": 13
         },
         {
-          "ans": "Golf Course",
-          "pnt": 2
+          "ans": "Nails",
+          "pnt": 6
         },
         {
-          "ans": "Screen",
-          "pnt": 2
-        },
-        {
-          "ans": "Road/Street",
-          "pnt": 2
+          "ans": "Debt/Expenses",
+          "pnt": 4
         }
       ],
       "multiply": 1,
-      "question": "Name Something That Might Be Full of Holes"
+      "question": "Name Something That Grows Faster Than You Want It To"
     },
     {
       "answers": [
         {
-          "ans": "Sleep/Dream",
-          "pnt": 75
+          "ans": "Chocolate",
+          "pnt": 36
         },
         {
-          "ans": "Sneeze",
-          "pnt": 16
+          "ans": "Peanuts",
+          "pnt": 22
         },
         {
-          "ans": "Kiss",
-          "pnt": 3
+          "ans": "Caramel",
+          "pnt": 15
         },
         {
-          "ans": "Swim/Dive",
-          "pnt": 3
-        }
-      ],
-      "multiply": 1,
-      "question": "Name Something That's Hard to Do With Your Eyes Open"
-    },
-    {
-      "answers": [
-        {
-          "ans": "Kid's Bedroom",
-          "pnt": 70
+          "ans": "Almonds",
+          "pnt": 12
         },
         {
-          "ans": "Summer Camp",
-          "pnt": 11
+          "ans": "Nougat",
+          "pnt": 10
         },
         {
-          "ans": "Military Barracks",
-          "pnt": 7
-        },
-        {
-          "ans": "Furniture Store",
+          "ans": "Coconut",
           "pnt": 6
         }
       ],
       "multiply": 2,
-      "question": "Name a Specific Place Where You'd See Bunk Beds"
+      "question": "Name a Common Candy Bar Component"
     },
     {
       "answers": [
         {
-          "ans": "Tacky Restaurant",
-          "pnt": 43
+          "ans": "They Breathe Fire",
+          "pnt": 76
         },
         {
-          "ans": "Strip Joint",
-          "pnt": 19
+          "ans": "Fly/Have Wings",
+          "pnt": 8
         },
         {
-          "ans": "Sporting Event",
-          "pnt": 12
+          "ans": "They Don't Exist",
+          "pnt": 5
         },
         {
-          "ans": "Bar/Club",
-          "pnt": 6
-        },
-        {
-          "ans": "Bowling Alley",
-          "pnt": 4
-        },
-        {
-          "ans": "His Parent's House",
-          "pnt": 4
-        },
-        {
-          "ans": "The Movies",
-          "pnt": 2
-        },
-        {
-          "ans": "Car Show",
-          "pnt": 2
+          "ans": "They're Big/Tall",
+          "pnt": 5
         }
       ],
       "multiply": 3,
-      "question": "Name a Place Where if Her Husband Took Her There for Her Anniversary, a Wife Would Be Mad"
+      "question": "Name Something Everyone Knows About Dragons"
     }
   ],
   "final_round": [
     {
       "answers": [
         [
-          "Kissing",
-          56
+          "10",
+          31
         ],
         [
-          "Talking",
-          23
+          "8",
+          26
         ],
         [
-          "Whistling",
-          7
+          "5",
+          17
         ],
         [
-          "Singing",
-          4
+          "7",
+          13
         ],
         [
-          "Playing Flute/Horn",
-          4
-        ],
-        [
-          "Licking Your Lips",
-          2
-        ]
-      ],
-      "question": "Name an Activity That Requires Using Your Lips"
-    },
-    {
-      "answers": [
-        [
-          "Chocolate",
-          36
-        ],
-        [
-          "Peanuts",
-          22
-        ],
-        [
-          "Caramel",
-          15
-        ],
-        [
-          "Almonds",
-          12
-        ],
-        [
-          "Nougat",
+          "9",
           10
-        ],
-        [
-          "Coconut",
-          6
         ]
       ],
-      "question": "Name a Common Candy Bar Component"
+      "question": "We Asked 100 Moms: On a Scale of 1 to 10, How Much Have You Become Like Your Own Mom With Age?"
     },
     {
       "answers": [
@@ -204,48 +159,65 @@
     {
       "answers": [
         [
-          "Poker Chips",
-          62
+          "Apple",
+          40
         ],
         [
-          "Cards",
-          22
+          "Chicken",
+          20
         ],
         [
-          "Money",
+          "Potato",
+          19
+        ],
+        [
+          "Peach",
           7
-        ],
-        [
-          "Green Felt",
-          6
         ]
       ],
-      "question": "Name Something You'd Find on Top of a Poker Table"
+      "question": "Name a Food You Leave the Skin On When Eating It"
     },
     {
       "answers": [
         [
-          "Suit/Tux",
-          35
+          "Train",
+          45
         ],
         [
-          "Dress",
-          26
+          "Ship",
+          34
         ],
         [
-          "Jewelry",
-          10
+          "Car",
+          17
         ],
         [
-          "Dress Shoes",
-          6
-        ],
-        [
-          "Shotgun",
-          4
+          "Nervous",
+          3
         ]
       ],
-      "question": "Name Something In A Person's Closet That Only Comes Out on Special Occasions"
+      "question": "___ Wreck"
+    },
+    {
+      "answers": [
+        [
+          "Beach",
+          43
+        ],
+        [
+          "Park",
+          30
+        ],
+        [
+          "Shower",
+          16
+        ],
+        [
+          "Bed",
+          8
+        ]
+      ],
+      "question": "Where Do You Like to Go Barefoot?"
     }
   ],
   "final_round_timers": [

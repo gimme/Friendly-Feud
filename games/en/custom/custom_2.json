@@ -3,249 +3,217 @@
     {
       "answers": [
         {
-          "ans": "Babes",
-          "pnt": 76
+          "ans": "Twilight",
+          "pnt": 33
         },
         {
-          "ans": "Food",
-          "pnt": 15
+          "ans": "Blood/Bloodsucker",
+          "pnt": 29
         },
         {
-          "ans": "Beer",
-          "pnt": 4
+          "ans": "Garlic",
+          "pnt": 9
         },
         {
-          "ans": "Sports/ESPN",
-          "pnt": 2
-        }
-      ],
-      "multiply": 1,
-      "question": "If Men Had a Tail Like Dogs Do, What Might They See That Would Cause It to Start Wagging?"
-    },
-    {
-      "answers": [
-        {
-          "ans": "Money/Coins",
-          "pnt": 19
-        },
-        {
-          "ans": "Food/Water",
-          "pnt": 18
-        },
-        {
-          "ans": "First Aid Kit",
-          "pnt": 18
-        },
-        {
-          "ans": "Spare Tire",
-          "pnt": 15
-        },
-        {
-          "ans": "Map",
+          "ans": "Bat",
           "pnt": 7
         },
         {
-          "ans": "Jumper Cables",
+          "ans": "Cape",
           "pnt": 7
         },
         {
-          "ans": "Spare Clothes/Shoes",
+          "ans": "Dracula",
           "pnt": 5
         },
         {
-          "ans": "Gas Can",
-          "pnt": 2
+          "ans": "Fangs",
+          "pnt": 4
         },
         {
-          "ans": "Flare",
-          "pnt": 2
+          "ans": "Halloween",
+          "pnt": 4
         }
       ],
       "multiply": 1,
-      "question": "What's Something You Keep in Your Car, Just in Case?"
+      "question": "Name Something Associated With Vampires"
     },
     {
       "answers": [
         {
-          "ans": "Change Seats",
-          "pnt": 39
+          "ans": "Coffee/Breakfast",
+          "pnt": 75
         },
         {
-          "ans": "Cover Nose/Mask",
-          "pnt": 24
+          "ans": "Fresh Air/Dew",
+          "pnt": 11
         },
         {
-          "ans": "Turn Head",
-          "pnt": 6
+          "ans": "Flowers",
+          "pnt": 4
         },
         {
-          "ans": "Endure/Enjoy It",
-          "pnt": 6
+          "ans": "Partner's Cologne",
+          "pnt": 4
+        }
+      ],
+      "multiply": 1,
+      "question": "Name Something You Love to Smell in the Morning"
+    },
+    {
+      "answers": [
+        {
+          "ans": "Tea",
+          "pnt": 59
         },
         {
-          "ans": "Spray Perfume",
-          "pnt": 6
+          "ans": "Coffee",
+          "pnt": 34
         },
         {
-          "ans": "\"You Reek, Yo!\"",
+          "ans": "Milk",
           "pnt": 3
         },
         {
-          "ans": "Sleep",
-          "pnt": 3
-        },
-        {
-          "ans": "Hang in the Bathroom",
+          "ans": "Cider",
           "pnt": 3
         }
       ],
       "multiply": 2,
-      "question": "Name Something You'd Do if the Person Sitting Next to You on an Airplane Had B.O."
+      "question": "Name a Drink That's Served Hot and Cold"
     },
     {
       "answers": [
         {
-          "ans": "Lunch/Snack",
-          "pnt": 78
+          "ans": "Mom/Dad",
+          "pnt": 85
         },
         {
-          "ans": "Recess",
-          "pnt": 12
+          "ans": "Grandma/Grandpa",
+          "pnt": 9
         },
         {
-          "ans": "Fire Drill",
-          "pnt": 5
+          "ans": "Teacher",
+          "pnt": 2
         },
         {
-          "ans": "School Bus",
-          "pnt": 4
+          "ans": "Friend",
+          "pnt": 2
         }
       ],
       "multiply": 3,
-      "question": "Name Something Kids Line Up for at School"
+      "question": "When You Were a Kid, Name Someone Who Could See Right Through Your Lies"
     }
   ],
   "final_round": [
     {
       "answers": [
         [
-          "The Phone",
-          54
-        ],
-        [
-          "Clothes/Coat/Hat",
-          38
-        ],
-        [
-          "A Towel",
-          4
-        ],
-        [
-          "A Picture/Frame",
-          3
-        ]
-      ],
-      "question": "Name Something You Hang Up"
-    },
-    {
-      "answers": [
-        [
-          "Quack",
-          65
-        ],
-        [
-          "Swim/Paddle",
-          20
-        ],
-        [
-          "Waddle",
-          7
-        ],
-        [
-          "Fly",
-          4
-        ]
-      ],
-      "question": "Name Something Ducks Do"
-    },
-    {
-      "answers": [
-        [
-          "China",
+          "Dog",
           45
         ],
         [
-          "India",
-          28
+          "Cat",
+          34
         ],
         [
-          "United States",
+          "Snake",
+          8
+        ],
+        [
+          "Pig",
+          4
+        ]
+      ],
+      "question": "Name a Pet You Wouldn't Let Sleep on Your Bed"
+    },
+    {
+      "answers": [
+        [
+          "Popcorn",
+          46
+        ],
+        [
+          "Grapes",
           20
         ],
         [
-          "Brazil",
-          5
+          "Peanuts",
+          11
         ],
         [
-          "Mexico",
-          2
-        ],
-        [
-          "Indonesia",
-          2
+          "Candy",
+          10
         ]
       ],
-      "question": "Name a Country With a Large Population"
+      "question": "Name a Food That's Easy to Catch in Your Mouth"
     },
     {
       "answers": [
         [
-          "Dress",
-          44
-        ],
-        [
-          "Ring",
+          "10",
           31
         ],
         [
-          "Champagne/Drinks",
-          11
+          "5",
+          28
         ],
         [
-          "Dinner",
-          6
+          "8",
+          21
+        ],
+        [
+          "9",
+          18
+        ],
+        [
+          "7",
+          2
         ]
       ],
-      "question": "Name Something You Would Buy After Getting Engaged"
+      "question": "On a Scale of 1 to 10, How Good Are You at Keeping a Secret?"
     },
     {
       "answers": [
         [
-          "Lollipop",
+          "Light",
+          37
+        ],
+        [
+          "Jam",
           33
         ],
         [
-          "Ice Cream/Cone",
-          32
-        ],
-        [
-          "Stamp",
+          "Stop",
           11
         ],
         [
-          "Popsicle",
-          10
-        ],
-        [
-          "Envelope",
-          9
-        ],
-        [
-          "Your Lips",
-          2
+          "Cone",
+          6
         ]
       ],
-      "question": "Name Something That Has to Be Licked"
+      "question": "Traffic ___"
+    },
+    {
+      "answers": [
+        [
+          "Shaving Cream",
+          39
+        ],
+        [
+          "Soap/Bubble Bath",
+          34
+        ],
+        [
+          "Beer",
+          16
+        ],
+        [
+          "Ocean/Waves",
+          3
+        ]
+      ],
+      "question": "Name Something That's Foamy"
     }
   ],
   "final_round_timers": [
