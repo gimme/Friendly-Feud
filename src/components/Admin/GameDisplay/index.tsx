@@ -1,6 +1,7 @@
 import FinalRoundButtonControls from "@/components/Admin/GameDisplay/FinalRoundButtonControls";
 import FinalRoundPointTotals from "@/components/Admin/GameDisplay/FinalRoundPointTotals";
 import TeamControls from "@/components/Admin/GameDisplay/TeamControls";
+import TitleMusic from "@/components/Admin/GameDisplay/TitleMusic";
 import HideGameQuestions from "@/components/Admin/HideGameQuestions";
 import Players from "@/components/Admin/Players";
 import BuzzerTable from "@/components/BuzzerTable";
@@ -23,6 +24,8 @@ interface GameDisplayProps {
   setTimerStarted: (timerStarted: boolean) => void;
   setTimerCompleted: (timerCompleted: boolean) => void;
   setTimerShown: (timerShown: boolean) => void;
+  titleMusicPlaying: boolean;
+  setTitleMusicPlaying: (titleMusicPlaying: boolean) => void;
 }
 
 export default function GameDisplay({
@@ -39,6 +42,8 @@ export default function GameDisplay({
   setTimerStarted,
   setTimerCompleted,
   setTimerShown,
+  titleMusicPlaying,
+  setTitleMusicPlaying,
 }: GameDisplayProps) {
   const { t } = useTranslation();
   const [revealOnly, setRevealOnly] = useState(false);
@@ -72,6 +77,14 @@ export default function GameDisplay({
       <div className="flex-col space-y-5 p-5">
         <hr />
         <div className="flex flex-row items-baseline justify-evenly">
+          <TitleMusic
+            send={send}
+            room={room}
+            game={game}
+            setGame={setGame}
+            isPlaying={titleMusicPlaying}
+            setIsPlaying={setTitleMusicPlaying}
+          />
           {/* CURRENT SCREEN TEXT */}
           <p id="currentScreenText" className="pt-5 text-center text-2xl text-foreground">
             {" "}

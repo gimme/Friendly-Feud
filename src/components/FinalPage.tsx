@@ -30,7 +30,7 @@ function Answers({ round, finalRoundNumber }: AnswersProps) {
               className="w-full truncate text-left text-5xl font-bold leading-none text-white"
               style={{ textShadow: TEXT_SHADOW }}
             >
-              {x.input}
+              {x.input || "-"}
             </p>
           </div>
         )}
@@ -56,9 +56,10 @@ function Answers({ round, finalRoundNumber }: AnswersProps) {
 interface FinalPageProps {
   game: Game;
   timer: number;
+  timerShown: boolean;
 }
 
-export default function FinalPage({ game, timer }: FinalPageProps) {
+export default function FinalPage({ game, timer, timerShown }: FinalPageProps) {
   const { t } = useTranslation();
   const hasConfettiRef = useRef(false);
   const total = [...game.final_round, ...game.final_round_2].reduce((sum, round) => sum + round.points, 0);
@@ -161,7 +162,7 @@ export default function FinalPage({ game, timer }: FinalPageProps) {
       {/* TIMER */}
       <div className="relative bottom-16 flex h-24 w-24 items-center justify-center justify-self-center rounded-full border-4 bg-blue-900 text-white">
         <p id="finalRoundTimerLabel" className="text-5xl font-bold uppercase" style={{ textShadow: TEXT_SHADOW }}>
-          <span id="finalRoundTimerValue">{t("number", { count: timer })}</span>
+          <span id="finalRoundTimerValue">{timerShown ? t("number", { count: timer }) : "--"}</span>
         </p>
       </div>
 

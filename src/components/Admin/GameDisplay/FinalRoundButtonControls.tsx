@@ -183,18 +183,18 @@ export default function FinalRoundButtonControls({ game, send, setGame }: FinalR
                 final_round: prevGame.is_final_second
                   ? prevGame.final_round
                   : prevGame.final_round.map((round, index) =>
-                      index === i ? { ...round, points: xPoints, selection: effectiveSelection } : round
+                      index === i ? { ...round, points: xPoints, selection: effectiveSelection, revealed: true } : round
                     ),
                 final_round_2: prevGame.is_final_second
                   ? prevGame.final_round_2.map((round, index) =>
-                      index === i ? { ...round, points: xPoints, selection: effectiveSelection } : round
+                      index === i ? { ...round, points: xPoints, selection: effectiveSelection, revealed: true } : round
                     )
                   : prevGame.final_round_2,
               };
 
               send({ action: "data", data: updatedGame });
               send({
-                action: effectiveSelection !== 0 ? "final_submit" : "mistake",
+                action: effectiveSelection !== 0 ? "final_submit" : "final_wrong",
               });
 
               return updatedGame;

@@ -1,5 +1,6 @@
 import ScoreMonitor from "@/components/ScoreMonitor";
 import { Game } from "@/types/game";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface RoundProps {
@@ -10,11 +11,21 @@ export default function Round({ game }: RoundProps) {
   const { t } = useTranslation();
   const round = game.rounds[game.round];
   const points = game.point_tracker[game.round];
+  const [displayedPoints, setDisplayedPoints] = useState(points);
+
+  useEffect(() => {
+    if (points <= displayedPoints) {
+      setDisplayedPoints(points);
+      return;
+    }
+    const timer = setTimeout(() => setDisplayedPoints(points), 400);
+    return () => clearTimeout(timer);
+  }, [points, displayedPoints]);
 
   return (
     <div className="font-oswald flex flex-col items-center">
       <div className="relative inline-block">
-        <ScoreMonitor points={points} id="roundPointsTeamtotal" className="w-60" />
+        <ScoreMonitor points={displayedPoints} id="roundPointsTeamtotal" className="w-60" />
         {round.multiply > 1 && (
           <span
             id="roundMultiplyText"

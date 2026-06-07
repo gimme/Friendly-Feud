@@ -12,7 +12,7 @@ interface FinalRoundTitleChangerProps {
 export default function FinalRoundTitleChanger({ game, setGame, send }: FinalRoundTitleChangerProps) {
   const { t } = useTranslation();
 
-  const finalRoundTitle = game.settings.final_round_title ?? t("Final Round");
+  const finalRoundTitle = game.settings.final_round_title ?? t("Fast Money");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGame((prevGame) => {

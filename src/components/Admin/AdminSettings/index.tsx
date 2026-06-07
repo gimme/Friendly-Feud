@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import ToolTipIcon from "../../ui/tooltip";
 import BuzzerSoundSettings from "./BuzzerSoundSettings";
+import FinalRoundTimersChanger from "./FinalRoundTimersChanger";
 import FinalRoundTitleChanger from "./FinalRoundTitleChanger";
 import SettingsCheckbox from "./SettingsCheckbox";
 
@@ -20,6 +21,7 @@ export default function AdminSettings({ game, setGame, send, hostPassword }: Adm
       <div className="grid grid-cols-2 gap-x-48 gap-y-10">
         <FinalRoundTitleChanger game={game} setGame={setGame} send={send} />
         <BuzzerSoundSettings game={game} setGame={setGame} send={send} />
+        <FinalRoundTimersChanger game={game} setGame={setGame} send={send} />
         <SettingsCheckbox
           game={game}
           setGame={setGame}
