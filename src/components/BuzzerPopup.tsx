@@ -1,3 +1,4 @@
+import { SoundManager } from "@/lib/sounds";
 import { BuzzedState } from "@/types/game";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -36,17 +37,7 @@ export default function BuzzerPopup({ buzzed }: BuzzerPopupProps) {
       // Set first press flag
       firstPressRef.current = true;
 
-      // Sound Attribution:
-      // "Quiz Show Buzzer 2" by JapanYoshiTheGamer
-      // Source: https://freesound.org/s/423219/
-      // License: Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)
-      const audio = new Audio("buzzer.wav");
-
-      // Handle audio play errors gracefully
-      // If we don't, popup will not go away
-      audio.play().catch((error) => {
-        console.warn("Error playing buzzer sound:", error);
-      });
+      SoundManager.play("buzzer");
 
       setIsVisible(true);
     }

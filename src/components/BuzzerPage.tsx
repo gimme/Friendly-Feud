@@ -6,6 +6,7 @@ import StrikeOverlay from "@/components/StrikeOverlay";
 import TeamName from "@/components/TeamName";
 import TitleLogo from "@/components/TitleLogo";
 import { ERROR_CODES } from "@/i18n/errorCodes";
+import { SoundManager } from "@/lib/sounds";
 import { getTeamDisplayName } from "@/lib/utils";
 import { Game, WSEvent } from "@/types/game";
 // @ts-expect-error cookie-cutter is not typed
@@ -44,13 +45,11 @@ export default function BuzzerPage({ ws, game, id, setGame, room, setTeam, team 
   };
 
   const playBuzzerSound = () => {
-    const audio = new Audio("buzzer.wav");
-    audio.play().catch((error) => {
-      console.warn("Error playing buzzer sound:", error);
-    });
+    SoundManager.play("buzzer");
   };
 
   useEffect(() => {
+    SoundManager.init();
     cookieCutter.set("session", `${room}:${id}:0`);
     const retryInterval = setInterval(() => {
       if (ws.current.readyState !== 1) {
@@ -75,8 +74,7 @@ export default function BuzzerPage({ ws, game, id, setGame, room, setTeam, team 
         console.debug(id);
         send({ action: "pong", id: id });
       } else if (json.action === "mistake" || json.action === "show_mistake") {
-        const audio = new Audio("wrong.mp3");
-        audio.play();
+        SoundManager.play("wrong");
         if (mistakeTimeoutRef.current) clearTimeout(mistakeTimeoutRef.current);
         setShowMistake(typeof json.data === "number" ? json.data : 1);
         mistakeTimeoutRef.current = setTimeout(() => {
@@ -252,7 +250,7 @@ export default function BuzzerPage({ ws, game, id, setGame, room, setTeam, team 
               <>
                 {game.is_final_round ? (
                   <div>
-                    <FinalPage game={game} timer={timer} />
+                    <FinalPage game={game} timer={timer} timerShown={true} />
                   </div>
                 ) : (
                   <div>

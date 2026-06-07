@@ -1,13 +1,12 @@
 import FinalRoundButtonControls from "@/components/Admin/GameDisplay/FinalRoundButtonControls";
 import FinalRoundPointTotals from "@/components/Admin/GameDisplay/FinalRoundPointTotals";
 import TeamControls from "@/components/Admin/GameDisplay/TeamControls";
-import TitleMusic from "@/components/Admin/GameDisplay/TitleMusic";
 import HideGameQuestions from "@/components/Admin/HideGameQuestions";
 import Players from "@/components/Admin/Players";
 import BuzzerTable from "@/components/BuzzerTable";
 import { Game, WSEvent } from "@/src/types/game";
 import Image from "next/image";
-import { Dispatch, RefObject, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface GameDisplayProps {
@@ -20,10 +19,10 @@ interface GameDisplayProps {
   pointsGiven: { state: boolean; color: string; textColor: string };
   timerStarted: boolean;
   timerCompleted: boolean;
+  timerShown: boolean;
   setTimerStarted: (timerStarted: boolean) => void;
   setTimerCompleted: (timerCompleted: boolean) => void;
-  titleMusicPlaying: boolean;
-  setTitleMusicPlaying: (titleMusicPlaying: boolean) => void;
+  setTimerShown: (timerShown: boolean) => void;
 }
 
 export default function GameDisplay({
@@ -36,12 +35,13 @@ export default function GameDisplay({
   pointsGiven,
   timerStarted,
   timerCompleted,
+  timerShown,
   setTimerStarted,
   setTimerCompleted,
-  titleMusicPlaying,
-  setTitleMusicPlaying,
+  setTimerShown,
 }: GameDisplayProps) {
   const { t } = useTranslation();
+  const [revealOnly, setRevealOnly] = useState(false);
 
   if (game.rounds == null) {
     {
@@ -72,14 +72,6 @@ export default function GameDisplay({
       <div className="flex-col space-y-5 p-5">
         <hr />
         <div className="flex flex-row items-baseline justify-evenly">
-          <TitleMusic
-            send={send}
-            room={room}
-            game={game}
-            setGame={setGame}
-            isPlaying={titleMusicPlaying}
-            setIsPlaying={setTitleMusicPlaying}
-          />
           {/* CURRENT SCREEN TEXT */}
           <p id="currentScreenText" className="pt-5 text-center text-2xl text-foreground">
             {" "}
@@ -275,6 +267,18 @@ export default function GameDisplay({
                   {t("number", { count: game.point_tracker[game.round] })}
                 </h3>
               </div>
+              <label className="flex cursor-pointer flex-row items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="revealOnlyToggle"
+                  className="size-4"
+                  checked={revealOnly}
+                  onChange={(e) => setRevealOnly(e.target.checked)}
+                />
+                <span className={`text-xl ${revealOnly ? "font-bold text-amber-500" : "text-foreground"}`}>
+                  {t("Reveal only")}
+                </span>
+              </label>
               <div className="flex flex-row items-center space-x-2">
                 <h3 id="multiplierText" className="text-xl text-foreground">
                   {t("multiplier")}:{" "}
@@ -308,7 +312,7 @@ export default function GameDisplay({
               <div
                 key={`answer-${index}`}
                 className={`${
-                  x.trig ? "bg-secondary-500" : "bg-primary-700"
+                  x.trig ? (x.awarded ? "bg-secondary-500" : "bg-amber-500") : "bg-primary-700"
                 } rounded border-2 text-2xl font-extrabold uppercase`}
               >
                 <button
@@ -320,14 +324,22 @@ export default function GameDisplay({
                     setGame((prv) => ({ ...prv }));
 
                     if (x.trig) {
-                      game.point_tracker[game.round] = game.point_tracker[game.round] + x.pnt * current_round.multiply;
+                      if (!revealOnly) {
+                        x.awarded = true;
+                        game.point_tracker[game.round] =
+                          game.point_tracker[game.round] + x.pnt * current_round.multiply;
+                      }
                       // @ts-expect-error: need a better way to update these values
                       setGame((prv) => ({ ...prv }));
                       send({ action: "reveal" });
                     } else {
-                      game.point_tracker[game.round] = game.point_tracker[game.round] - x.pnt * current_round.multiply;
-                      if (game.point_tracker[game.round] < 0) {
-                        game.point_tracker[game.round] = 0;
+                      if (x.awarded) {
+                        game.point_tracker[game.round] =
+                          game.point_tracker[game.round] - x.pnt * current_round.multiply;
+                        if (game.point_tracker[game.round] < 0) {
+                          game.point_tracker[game.round] = 0;
+                        }
+                        x.awarded = false;
                       }
                       // @ts-expect-error: need a better way to update these values
                       setGame((prv) => ({ ...prv }));
@@ -416,6 +428,7 @@ export default function GameDisplay({
                       data: game.final_round_timers[1],
                     });
                     setTimerCompleted(false);
+                    setTimerShown(false);
                   }}
                 >
                   {t("start")} {t("Final Round")} {t("number", { count: 2 })}
@@ -438,6 +451,7 @@ export default function GameDisplay({
                         action: "set_timer",
                         data: game.final_round_timers[0],
                       });
+                      setTimerShown(false);
                     }}
                   >
                     {t("Back To")} {t("Final Round")} {t("number", { count: 1 })}
@@ -454,6 +468,7 @@ export default function GameDisplay({
                             // @ts-expect-error: need a better way to update these values
                             setGame((prv) => ({ ...prv }));
                             send({ action: "data", data: game });
+                            send({ action: "final_reveal" });
                           }}
                         >
                           {t("Reveal First Round Answers")}
@@ -498,6 +513,7 @@ export default function GameDisplay({
                       }
                       setTimerStarted(true);
                       setTimerCompleted(false);
+                      setTimerShown(true);
                     }}
                   >
                     {t("Start Timer")}
@@ -515,12 +531,34 @@ export default function GameDisplay({
                     {t("Stop Timer")}
                   </button>
                 )}
-                <button
-                  className={`ml-2 rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground ${!timerStarted ? "" : "opacity-50"}`}
-                  disabled={timerStarted}
-                  id="resetTimerButton"
-                  onClick={() => {
-                    if (!timerStarted) {
+                {timerStarted ? (
+                  <button
+                    id="fmCompleteButton"
+                    className="ml-2 rounded border-4 bg-green-600 p-5 text-3xl text-white"
+                    onClick={() => {
+                      send({ action: "fm_complete" });
+                      setTimerStarted(false);
+                      setTimerCompleted(true);
+                    }}
+                  >
+                    {t("Complete")}
+                  </button>
+                ) : !timerShown ? (
+                  <button
+                    id="showTimerButton"
+                    className="ml-2 rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground"
+                    onClick={() => {
+                      send({ action: "show_timer" });
+                      setTimerShown(true);
+                    }}
+                  >
+                    {t("Show Timer")}
+                  </button>
+                ) : (
+                  <button
+                    id="resetTimerButton"
+                    className="ml-2 rounded border-4 bg-secondary-300 p-5 text-3xl text-foreground"
+                    onClick={() => {
                       if (game.is_final_second) {
                         send({
                           action: "set_timer",
@@ -532,12 +570,13 @@ export default function GameDisplay({
                           data: game.final_round_timers[0],
                         });
                       }
-                    }
-                    setTimerCompleted(false);
-                  }}
-                >
-                  {t("Reset Timer")}
-                </button>
+                      setTimerCompleted(false);
+                      setTimerShown(false);
+                    }}
+                  >
+                    {t("Reset Timer")}
+                  </button>
+                )}
               </div>
             </div>
             <FinalRoundPointTotals game={game} />

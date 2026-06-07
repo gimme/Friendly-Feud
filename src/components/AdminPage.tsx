@@ -1,6 +1,7 @@
 import AdminSettings from "@/components/Admin/AdminSettings";
 import CSVLoader from "@/components/Admin/CSVLoader";
 import GameDisplay from "@/components/Admin/GameDisplay";
+import Soundboard from "@/components/Admin/GameDisplay/Soundboard";
 import RoomSettings from "@/components/Admin/RoomSettings";
 import TitlesAndLogoSettings from "@/components/Admin/TitlesAndLogoSettings";
 import { ERROR_CODES } from "@/i18n/errorCodes";
@@ -36,6 +37,7 @@ export default function AdminPage({ ws, game, setGame, room, quitGame, playerId 
   const [timerStarted, setTimerStarted] = useState(false);
   const [timerCompleted, setTimerCompleted] = useState(false);
   const [titleMusicPlaying, setTitleMusicPlaying] = useState(false);
+  const [timerShown, setTimerShown] = useState(false);
   const [csvFileUpload, setCsvFileUpload] = useState<File | null>(null);
   const [csvFileUploadText, setCsvFileUploadText] = useState("");
   const refreshCounterRef = useRef(0);
@@ -146,11 +148,14 @@ export default function AdminPage({ ws, game, setGame, room, quitGame, playerId 
         pointsGiven={pointsGiven}
         timerStarted={timerStarted}
         timerCompleted={timerCompleted}
+        timerShown={timerShown}
         setTimerStarted={setTimerStarted}
         setTimerCompleted={setTimerCompleted}
         titleMusicPlaying={titleMusicPlaying}
         setTitleMusicPlaying={setTitleMusicPlaying}
+        setTimerShown={setTimerShown}
       />
+      <Soundboard send={send} />
       {/* Modal over whole admin page */}
       {csvFileUpload && (
         <CSVLoader

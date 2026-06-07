@@ -25,6 +25,7 @@ export const WSAction = {
   FINAL_SUBMIT: "final_submit",
   FINAL_WRONG: "final_wrong",
   SET_TIMER: "set_timer",
+  SHOW_TIMER: "show_timer",
   STOP_TIMER: "stop_timer",
   START_TIMER: "start_timer",
   CHANGE_LANG: "change_lang",
@@ -48,6 +49,9 @@ export const WSAction = {
   BUZZ: "buzz",
   REGISTER_BUZZ: "registerbuzz",
   REGISTER_SPECTATOR: "registerspectator",
+  PLAY_SOUND: "play_sound",
+  STOP_SOUND: "stop_sound",
+  FM_COMPLETE: "fm_complete",
 } as const;
 
 type WSActionKey = keyof typeof WSAction;
@@ -121,6 +125,7 @@ export interface Answer {
   trig: boolean;
   ans: string;
   pnt: number;
+  awarded?: boolean;
 }
 
 export interface Round {

@@ -7,6 +7,7 @@ import StrikeOverlay from "@/components/StrikeOverlay";
 import TeamName from "@/components/TeamName";
 import TitlePage from "@/components/Title/TitlePage";
 import { ERROR_CODES } from "@/i18n/errorCodes";
+import { SoundManager } from "@/lib/sounds";
 import { getWebSocketUrl } from "@/lib/utils";
 import { BuzzedState, Game, WSAction, WSEvent } from "@/types/game";
 // @ts-expect-error: not sure if cookie-cutter is typed
@@ -22,6 +23,7 @@ export default function GamePage() {
   const { i18n, t } = useTranslation();
   const [game, setGame] = useState<Game | null>(null);
   const [timer, setTimer] = useState(0);
+  const [timerShown, setTimerShown] = useState(false);
   const [showMistake, setShowMistake] = useState<number | null>(null);
   const [isHost, setIsHost] = useState(false);
   const [buzzed, setBuzzed] = useState<BuzzedState>({});
@@ -86,6 +88,7 @@ export default function GamePage() {
   }, [game?.settings?.theme]);
 
   useEffect(() => {
+    SoundManager.init();
     ws.current = new WebSocket(getWebSocketUrl());
     ws.current.onopen = function () {
       console.log("game connected to server");
@@ -188,8 +191,7 @@ export default function GamePage() {
           setIsHost(newGameData.host.id === id);
         }
       } else if (json.action === "mistake" || json.action === "show_mistake") {
-        const audio = new Audio("wrong.mp3");
-        audio.play();
+        SoundManager.play("wrong");
         if (mistakeTimeoutRef.current) clearTimeout(mistakeTimeoutRef.current);
         setShowMistake(typeof json.data === "number" ? json.data : 1);
         mistakeTimeoutRef.current = setTimeout(() => {
@@ -199,20 +201,15 @@ export default function GamePage() {
         setGame(null);
         window.close();
       } else if (json.action === "reveal") {
-        const audio = new Audio("good-answer.mp3");
-        audio.play();
+        SoundManager.play("good-answer");
       } else if (json.action === "final_reveal") {
-        const audio = new Audio("fm-answer-reveal.mp3");
-        audio.play();
+        SoundManager.play("fm-answer-reveal");
       } else if (json.action === "duplicate") {
-        const audio = new Audio("duplicate.mp3");
-        audio.play();
+        SoundManager.play("duplicate");
       } else if (json.action === "final_submit") {
-        const audio = new Audio("good-answer.mp3");
-        audio.play();
+        SoundManager.play("ding");
       } else if (json.action === "final_wrong") {
-        const audio = new Audio("try-again.mp3");
-        audio.play();
+        SoundManager.play("try-again");
       } else if (json.action === WSAction.PLAY_TITLE_MUSIC) {
         const titleMusic = getTitleMusic();
         titleMusic.play().catch((error) => {
@@ -225,21 +222,37 @@ export default function GamePage() {
         titleMusic.pause();
       } else if (json.action === WSAction.TITLE_MUSIC_PLAYBACK_ERROR) {
         console.debug("Title music playback error reported");
+      } else if (json.action === "show_timer") {
+        SoundManager.play("ding");
+        setTimerShown(true);
       } else if (json.action === "set_timer") {
         setTimer(json.data);
+        setTimerShown(false);
       } else if (json.action === "stop_timer") {
         if (timerInterval) {
           clearInterval(timerInterval);
         }
+        SoundManager.stop("fm-tension");
+      } else if (json.action === "fm_complete") {
+        if (timerInterval) {
+          clearInterval(timerInterval);
+        }
+        SoundManager.stop("fm-tension");
+        SoundManager.play("fm-complete");
       } else if (json.action === "start_timer") {
+        setTimerShown(true);
+        const timerValue = json.data as number;
+        SoundManager.play("fm-tension", {
+          startTime: Math.max(0, 25 - timerValue),
+        });
         timerInterval = setInterval(() => {
           setTimer((prevTimer) => {
             const nextTimer = prevTimer - 1;
             if (nextTimer > 0) {
               return nextTimer;
             } else {
-              const audio = new Audio("try-again.mp3");
-              audio.play();
+              SoundManager.stop("fm-tension");
+              SoundManager.play("try-again");
 
               if (timerInterval) {
                 clearInterval(timerInterval);
@@ -286,6 +299,14 @@ export default function GamePage() {
       } else if (json.action === "clearbuzzers") {
         console.debug("Clear buzzers");
         setBuzzed({});
+      } else if (json.action === "play_sound") {
+        if (typeof json.data === "object") {
+          SoundManager.play(json.data.name, { loop: json.data.loop });
+        } else {
+          SoundManager.play(json.data);
+        }
+      } else if (json.action === "stop_sound") {
+        SoundManager.stop(json.data);
       } else {
         console.error("didn't expect", json);
       }
@@ -323,6 +344,7 @@ export default function GamePage() {
       if (titleMusicRef.current) {
         titleMusicRef.current.pause();
       }
+      SoundManager.dispose();
       ws.current?.close();
     };
   }, []);
@@ -337,7 +359,7 @@ export default function GamePage() {
       gameSession = (
         <div className="flex w-full justify-center">
           <div className="flex w-11/12 flex-col space-y-6 py-20 sm:w-11/12 sm:px-8 md:w-4/6 lg:w-5/6">
-            <FinalPage game={game} timer={timer} />
+            <FinalPage game={game} timer={timer} timerShown={timerShown} />
           </div>
         </div>
       );
