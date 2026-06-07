@@ -48,6 +48,7 @@ type answer struct {
 	Triggered bool   `json:"trig"`
 	Answer    string `json:"ans"`
 	Points    int    `json:"pnt"`
+	Awarded   bool   `json:"awarded"`
 }
 
 type round struct {
